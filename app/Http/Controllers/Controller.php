@@ -5,7 +5,6 @@ namespace App\Http\Controllers;
 use App\Model\UserUrl;
 use App\MinifyUrl;
 use Illuminate\Foundation\Bus\DispatchesJobs;
-use Illuminate\Http\Request;
 use Illuminate\Routing\Controller as BaseController;
 use Illuminate\Foundation\Validation\ValidatesRequests;
 use Illuminate\Foundation\Auth\Access\AuthorizesRequests;
@@ -41,8 +40,6 @@ class Controller extends BaseController {
 
 	/**
 	 * Load home page.
-	 *
-	 * @return Renderable view
 	 */
 	public function index(CookieJar $objCookieJar) {
 
@@ -55,8 +52,6 @@ class Controller extends BaseController {
 
 	/**
 	 * Save the minified url for guest.
-	 *
-	 * @return Renderable view
 	 */
 
 	public function saveGuestUrl(CookieJar $objCookieJar) {

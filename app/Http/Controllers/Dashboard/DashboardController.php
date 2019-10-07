@@ -2,7 +2,6 @@
 
 namespace App\Http\Controllers\Dashboard;
 
-use App\Model\UserUrl;
 use App\Http\Controllers\Controller;
 use Illuminate\Support\Facades\DB;
 
@@ -29,8 +28,6 @@ class DashboardController extends Controller
 
 	/**
 	 * Show the application dashboard.
-	 *
-	 * @return Renderable
 	 */
 	public function loadDahsboard() {
 
@@ -40,9 +37,6 @@ class DashboardController extends Controller
 							->where('user_urls.user_id', '=', auth()->user()->id)
 							->groupBy('user_urls.id', 'user_urls.title', 'user_urls.full_url', 'user_urls.short_url', 'url_clicks.user_url_id')
 							->get();
-
-		// load the urls created by logged in user
-		//$arrobjUserUrls = UserUrl::where('user_id', auth()->user()->id)->get();
 
 		return view('dashboard.index', ['userUrls' => $arrobjUserUrls]);
 	}
