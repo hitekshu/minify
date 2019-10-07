@@ -1,8 +1,14 @@
+# Mini.fy
+This project is based on Laravel framework and allows guests and registered users to generate minified urls
 
-## License
 
-The Laravel framework is open-source software licensed under the [MIT license](https://opensource.org/licenses/MIT).
-# Project Setup Instructions
+## Requirements:
+- composer
+- NPM
+- PHP 7.1 or higher
+- MySql
+
+## Project Setup Instructions
 
 - Download or clone the project
 - Install dependencies
@@ -10,3 +16,7 @@ The Laravel framework is open-source software licensed under the [MIT license](h
 - run php artisan migrate to create tables
 - Add mini.fy to your hosts file if you wish to run the project as it is
 - /config/minifyurl.php contains the config for minifying urls
+
+## License
+
+[MIT license](https://opensource.org/licenses/MIT).
