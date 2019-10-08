@@ -3,7 +3,7 @@ This project is based on Laravel framework and allows guests and registered user
 
 
 ## Requirements:
-- composer
+- Composer
 - NPM
 - PHP 7.1 or higher
 - MySql
@@ -11,13 +11,13 @@ This project is based on Laravel framework and allows guests and registered user
 ## Project Setup Instructions
 
 - Download or clone the project
-- Install dependencies using npm
-- install remaining project using composer
+- Install dependencies using **npm install**
+- Then run **composer install**
 - Rename .env-example to .env and update your app name and database credentials
-- run php artisan migrate to create tables
+- Run **php artisan migrate** to create tables
 - Add mini.fy to your hosts file if you wish to run the project as it is
-- /config/minifyurl.php contains the config for minifying urls
-- Generate a new laravel key
+- /config/minifyurl.php contains the config for minifying urls. Change the prefix to match your localhost url
+- Generate a new key using **php artisan key:generate**
 
 ## License
 
