@@ -11,11 +11,13 @@ This project is based on Laravel framework and allows guests and registered user
 ## Project Setup Instructions
 
 - Download or clone the project
-- Install dependencies
-- Update .env file with your database credentials
+- Install dependencies using npm
+- install remaining project using composer
+- Rename .env-example to .env and update your app name and database credentials
 - run php artisan migrate to create tables
 - Add mini.fy to your hosts file if you wish to run the project as it is
 - /config/minifyurl.php contains the config for minifying urls
+- Generate a new laravel key
 
 ## License
 

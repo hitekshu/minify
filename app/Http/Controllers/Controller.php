@@ -71,7 +71,9 @@ class Controller extends BaseController {
 			'short_url' => $strMinifiedUrl
 		]);
 
-		return view('welcome', ['urlInfo' => $this->m_arrstrGuestUrls]);
+		$this->getDashboardStatistics();
+
+		return view('welcome', ['urlInfo' => $this->m_arrstrGuestUrls, 'totalHits' => $this->m_intTotalHits, 'totalLinks' => $this->m_intTotalLinks]);
 	}
 
 
