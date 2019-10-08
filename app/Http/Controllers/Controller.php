@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Model\UrlClick;
 use App\Model\UserUrl;
 use App\MinifyUrl;
 use Illuminate\Foundation\Bus\DispatchesJobs;
@@ -9,6 +10,7 @@ use Illuminate\Routing\Controller as BaseController;
 use Illuminate\Foundation\Validation\ValidatesRequests;
 use Illuminate\Foundation\Auth\Access\AuthorizesRequests;
 use Illuminate\Cookie\CookieJar;
+use Illuminate\Support\Facades\DB;
 
 
 class Controller extends BaseController {
@@ -26,6 +28,9 @@ class Controller extends BaseController {
 
     protected $m_objGuestCookie;
     protected $m_arrstrGuestUrls;
+
+	protected $m_intTotalLinks;
+	protected $m_intTotalHits;
 
 	/**
 	 * Create a new controller instance.
@@ -45,9 +50,9 @@ class Controller extends BaseController {
 
 		$this->createCookie($objCookieJar);
 
-		$intTotalUrlCount = $this->getTotalUrlsGenerated();
+		$this->getDashboardStatistics();
 
-		return view('welcome', ['urlInfo' => $this->m_arrstrGuestUrls, 'totalUrlCount' => $intTotalUrlCount]);
+		return view('welcome', ['urlInfo' => $this->m_arrstrGuestUrls, 'totalHits' => $this->m_intTotalHits, 'totalLinks' => $this->m_intTotalLinks]);
 	}
 
 	/**
@@ -91,11 +96,13 @@ class Controller extends BaseController {
 	}
 
 	/**
-	 * Get a count of total minified urls generated
-	 *
-	 * @return integer
+	 * Calcuate the Home Page Statistics
 	 */
-	private function getTotalUrlsGenerated() {
-		return UserUrl::count();
+	public function getDashboardStatistics() {
+
+		$this->m_intTotalHits = UrlClick::count();
+
+		$this->m_intTotalLinks = UserUrl::count();
+
 	}
 }

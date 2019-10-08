@@ -13,11 +13,10 @@
                             <div class="text-center">
                                 <h2 class="h2 text-gray-900 mb-4">{{ __('Let\'s Mini.fy!') }}</h2>
                                 <h2 class="h4 text-gray-900 mb-4">{{ __('Unleash The Power Of The Link') }}</h2>
-                                <span class="h5 text-center">{{ __('Link Management Platform
-Mini.fy is a link management platform and URL shortener with branded URLs that gives you many useful features') }}</span>
+                                <span class="h5 text-center">{{ __('Link Management Platform Mini.fy is a link management platform and URL shortener with branded URLs that gives you many useful features') }}</span>
                             </div>
                             <div class="text-center">
-                                <img height="400" width="400" src="/assets/images/2019-10-06.png" />
+                                <img height="400" width="400" src="/assets/images/2019-10-06.png" /><br><br>
                             </div>
                             <form method="POST" class="user" action="{{ route('saveAsGuest') }}">
                                 @csrf
@@ -51,6 +50,41 @@ Mini.fy is a link management platform and URL shortener with branded URLs that g
                                 </table>
                                 @endif
                             </form>
+                            <div class="row">
+                                <div class="col-xl-3 col-md-6 mb-4">
+                                    <div class="card border-left-danger shadow h-100 py-2">
+                                        <div class="card-body">
+                                            <div class="row no-gutters align-items-center">
+                                                <div class="col mr-2">
+                                                    <div class="text-xs font-weight-bold text-primary text-uppercase mb-1">{{ __('Total Links Generated') }}</div>
+                                                    <div class="h5 mb-0 font-weight-bold text-gray-800">{{$totalLinks}}</div>
+                                                </div>
+                                                <div class="col-auto">
+                                                    <i class="fas fa-calendar fa-2x text-gray-300"></i>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <!-- Earnings (Monthly) Card Example -->
+                                <div class="col-xl-3 col-md-6 mb-4">
+                                    <div class="card border-left-success shadow h-100 py-2">
+                                        <div class="card-body">
+                                            <div class="row no-gutters align-items-center">
+                                                <div class="col mr-2">
+                                                    <div class="text-xs font-weight-bold text-success text-uppercase mb-1">{{ __('Total Clicks generated') }}</div>
+                                                    <div class="h5 mb-0 font-weight-bold text-gray-800">{{$totalHits}}</div>
+                                                </div>
+                                                <div class="col-auto">
+                                                    <i class="fas fa-dollar-sign fa-2x text-gray-300"></i>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
                         </div>
                     </div>
                 </div>

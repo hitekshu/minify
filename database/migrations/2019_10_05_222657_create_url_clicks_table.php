@@ -22,7 +22,7 @@ class CreateUrlClicksTable extends Migration
 			$table->foreign('user_url_id')
 				->references('id')
 				->on('user_urls')
-				->onDelete('restrict');
+				->onDelete('cascade');
         });
     }
 
